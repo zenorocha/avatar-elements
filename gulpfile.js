@@ -1,10 +1,17 @@
 var gulp = require('gulp'),
+    babel = require('gulp-babel'),
     connect = require('gulp-connect'),
     ghPages = require('gulp-gh-pages');
 
+gulp.task('babel', function () {
+    return gulp.src('src/*')
+        .pipe(babel())
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('deploy', function() {
     var files = [
-        'index.html', './src/*', './bower_components/**/*', '!bower_components/avatar-elements/**/*'
+        'index.html', 'dist/*', 'bower_components/**/*', '!bower_components/avatar-elements/**/*'
     ];
 
     return gulp.src(files, { base: './' })
@@ -16,3 +23,9 @@ gulp.task('deploy', function() {
 gulp.task('server', function() {
     connect.server();
 });
+
+gulp.task('watch', function(){
+    gulp.watch('src/*', ['babel']);
+});
+
+gulp.task('default', ['server', 'watch']);

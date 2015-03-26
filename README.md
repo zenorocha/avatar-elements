@@ -38,7 +38,7 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
 2. Import Custom Element:
 
     ```html
-    <script src="src/avatars.js"></script>
+    <script src="dist/avatars.js"></script>
     ```
 
 3. Start using it!
@@ -58,12 +58,12 @@ Attribute     | Options     | Default      | Description
 
 ## Development
 
-In order to run it locally you'll need to fetch some dependencies and a basic server setup.
+In order to run it locally you'll need to fetch some dependencies.
 
-* Install [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/):
+* Install [Bower](http://bower.io/) & [Gulp](http://gulpjs.com/):
 
     ```sh
-    $ [sudo] npm install -g bower grunt-cli
+    $ [sudo] npm install -g bower gulp
     ```
 
 * Install local dependencies:
@@ -72,16 +72,10 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     $ bower install && npm install
     ```
 
-* To test your project, start the development server and open `http://localhost:8000`.
+* To watch ES6 compilation and start the development server.
 
     ```sh
-    $ grunt server
-    ```
-
-* To provide a live demo, send everything to `gh-pages` branch.
-
-    ```sh
-    $ grunt deploy
+    $ gulp
     ```
 
 ## Contributing
