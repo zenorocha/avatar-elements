@@ -69,15 +69,12 @@ class FacebookAvatar extends Avatar {
 class GravatarAvatar extends Avatar {
     imageURL() {
         var url = '';
-        console.log(this.emailHash());
-
         if (this.emailHash()) {
             url = 'http://www.gravatar.com/avatar/' + this.emailHash()+ '?s=' + this.size();
         }else {
             var email = md5(this.email());
             url = 'http://www.gravatar.com/avatar/' + email+ '?s=' + this.size();
         }
-
         return url;
     }
 
