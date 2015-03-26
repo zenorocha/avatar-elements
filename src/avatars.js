@@ -15,6 +15,10 @@ class Avatar extends HTMLImageElement {
         return this.getAttribute('size') || 48;
     }
 
+    apikey(){
+      return this.getAttribute('apikey');
+    }
+
     load(path, callback) {
     	var httpRequest = new XMLHttpRequest();
     	httpRequest.onreadystatechange = function() {
@@ -58,6 +62,25 @@ class FacebookAvatar extends Avatar {
     }
 }
 
+class GooglePlusAvatar extends Avatar {
+
+  apiURL() {
+    return 'https://www.googleapis.com/plus/v1/people/'+this.username()+'?fields=image&key='+this.apikey();
+  }
+
+  imageURL(data) {
+    return data.image.url + '&sz=' + this.size();
+  }
+
+  createdCallback() {
+    var self = this;
+    self.load(self.apiURL(), function(data) {
+      self.setAttribute('src', self.imageURL(data));
+    });
+  }
+}
+
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -65,5 +88,10 @@ document.registerElement('avatar-github', {
 
 document.registerElement('avatar-facebook', {
     prototype: FacebookAvatar.prototype,
+    extends: 'img'
+});
+
+document.registerElement('avatar-google-plus', {
+    prototype: GooglePlusAvatar.prototype,
     extends: 'img'
 });
