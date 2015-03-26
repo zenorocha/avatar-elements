@@ -32,11 +32,11 @@ class Avatar extends HTMLImageElement {
 
 class GitHubAvatar extends Avatar {
     apiURL() {
-        return 'https://api.github.com/users/' + this.username();
+        return `https://api.github.com/users/${this.username()}`;
     }
 
     imageURL(data) {
-        return data.avatar_url + '&s=' + this.size();
+        return `${data.avatar_url}&s=${this.size()}`;
     }
 
     createdCallback() {
@@ -50,7 +50,7 @@ class GitHubAvatar extends Avatar {
 
 class FacebookAvatar extends Avatar {
     imageURL() {
-        return 'https://graph.facebook.com/' + this.username() + '/picture?' + 'width=' + this.size() + '&height=' + this.size();
+        return `https://graph.facebook.com/${this.username()}/picture?width=${this.size()}&height=${this.size()}`;
     }
 
     createdCallback() {
