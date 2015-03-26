@@ -51,8 +51,8 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
 
 Attribute     | Options     | Default      | Description
 ---           | ---         | ---          | ---
-`username`    | *string*    | `null`       | The name of the user
-`size`        | *number*    | `48`         | Custom image dimensions
+`username`    | *string*    | `null`       |  **Required.** The name of the user.
+`size`        | *number*    | `48`         | Custom image dimensions.
 
 ## Development
 
@@ -96,4 +96,4 @@ For detailed changelog, check [Releases](https://github.com/zenorocha/avatar-ele
 
 ## License
 
-[MIT License](http://opensource.org/licenses/MIT)
+[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha

@@ -5,8 +5,13 @@
     element.createdCallback = function() {
         var self = this,
             size = this.getAttribute('size') || 48,
-            username = this.getAttribute('username'),
-            url = 'https://api.github.com/users/' + username;
+            username = this.getAttribute('username');
+
+        if (username) {
+            var url = 'https://api.github.com/users/' + username;
+        } else {
+            throw new Error('Username attribute is required.');
+        }
 
         loadJSON(url, function(data) {
             var image = data.avatar_url + '&s=' + size;
