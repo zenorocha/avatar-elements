@@ -58,6 +58,17 @@ class FacebookAvatar extends Avatar {
     }
 }
 
+class SkypeAvatar extends Avatar {
+    imageURL() {
+        //http://api.skype.com/users/live:jonatan_29/profile/avatar
+        return 'http://api.skype.com/users/' + this.username() + '/profile/avatar';
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -65,5 +76,10 @@ document.registerElement('avatar-github', {
 
 document.registerElement('avatar-facebook', {
     prototype: FacebookAvatar.prototype,
+    extends: 'img'
+});
+
+document.registerElement('avatar-skype', {
+    prototype: SkypeAvatar.prototype,
     extends: 'img'
 });
