@@ -39,3 +39,25 @@ document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
 });
+
+
+
+class FacebookAvatar extends Avatar {
+  createdCallback(){
+    var self = this,
+        size = this.getAttribute('size') || 48,
+        username = this.getAttribute('username');
+
+        if(username){
+            var url = 'https://graph.facebook.com/' + username + '/picture?' + 'width=' + size + '&height=' + size;
+            self.setAttribute('src',url);
+        } else {
+          throw new Error('Username attribute is required.');
+        }
+  }
+}
+
+document.registerElement('avatar-facebook', {
+    prototype: FacebookAvatar.prototype,
+    extends: 'img'
+});
