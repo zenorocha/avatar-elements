@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <title>&lt;avatar-elements&gt;</title>
 
-    <!-- Importing Web Component's Polyfill -->
+    <!-- Importing Custom Elements' Polyfill -->
     <script src="bower_components/webcomponentsjs/CustomElements.min.js"></script>
 
     <!-- Importing Custom Elements -->
-    <script src="src/avatars.js"></script>
+    <script src="dist/avatars.js"></script>
 </head>
 <body>
 
     <!-- Using Custom Elements -->
     <img is="avatar-github" username="zenorocha" size="96">
     <pre><code>&lt;img is="avatar-github" username="zenorocha" size="96"&gt;</code></pre>
+
+    <img is="avatar-facebook" username="zenorocha" size="96">
+    <pre><code>&lt;img is="avatar-facebook" username="zenorocha" size="96"&gt;</code></pre>
 
 </body>
 </html>
