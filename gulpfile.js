@@ -1,11 +1,13 @@
 var gulp = require('gulp'),
     babel = require('gulp-babel'),
     connect = require('gulp-connect'),
-    ghPages = require('gulp-gh-pages');
+    ghPages = require('gulp-gh-pages'),
+    uglify = require('gulp-uglify');
 
-gulp.task('babel', function () {
+gulp.task('dist', function () {
     return gulp.src('src/*')
         .pipe(babel())
+        .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
 
@@ -25,7 +27,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('src/*', ['babel']);
+    gulp.watch('src/*', ['dist']);
 });
 
 gulp.task('default', ['server', 'watch']);
