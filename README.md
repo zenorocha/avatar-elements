@@ -1,12 +1,10 @@
 # &lt;avatar-elements&gt;
 
-> Avatars made easy
-
-## Demo
-
-[Check it live!](http://zenorocha.github.io/avatar-elements)
+> Avatars made easy with Web Components.
 
 ## Roadmap
+
+This project is under construction, but you can check our high level goals.
 
 - [X] GitHub
 - [ ] Twitter
@@ -14,6 +12,10 @@
 - [ ] Google+
 - [ ] Skype
 - [ ] Gravatar
+
+## Demo
+
+[Check it live!](http://zenorocha.github.io/avatar-elements)
 
 ## Install
 
@@ -45,7 +47,7 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
     <img is="avatar-github" username="zenorocha">
     ```
 
-## &lt;avatar-github&gt;
+## `avatar-github`
 
 ### Options
 
@@ -93,6 +95,10 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 ## History
 
 For detailed changelog, check [Releases](https://github.com/zenorocha/avatar-elements/releases).
+
+## Credits
+
+Inspired by [Phil Leggetter](https://github.com/leggetter) and [avatars.io](https://avatars.io/).
 
 ## License
 
