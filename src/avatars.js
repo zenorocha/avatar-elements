@@ -101,12 +101,12 @@ document.registerElement('avatar-facebook', {
     extends: 'img'
 });
 
-<<<<<<< HEAD
 document.registerElement('avatar-google-plus', {
     prototype: GooglePlusAvatar.prototype,
-=======
+    extends: 'img'
+});
+
 document.registerElement('avatar-skype', {
     prototype: SkypeAvatar.prototype,
->>>>>>> 8d0120c272815fe036b9d5856868ebe1af50040a
     extends: 'img'
 });
