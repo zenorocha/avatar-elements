@@ -70,10 +70,10 @@ class GravatarAvatar extends Avatar {
     imageURL() {
         var url = '';
         if (this.emailHash()) {
-            url = 'http://www.gravatar.com/avatar/' + this.emailHash()+ '?s=' + this.size();
+            url = `http://www.gravatar.com/avatar/${this.emailHash()}?s=${this.size()}`;
         }else {
             var email = md5(this.email());
-            url = 'http://www.gravatar.com/avatar/' + email+ '?s=' + this.size();
+            url = `http://www.gravatar.com/avatar/${email}?s=${this.size()}`;
         }
         return url;
     }
