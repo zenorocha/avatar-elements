@@ -1,18 +1,19 @@
 {
-    "name": "avatar-elements",
-    "version": "0.0.0",
-    "description": "Avatars made easy",
-    "license": "MIT",
-    "main": "src/avatar-github.html",
-    "keywords": [
-        "web-components"
-    ],
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ],
-    "dependencies": {
-        "webcomponentsjs": "^0.5.1"
-    }
+  "name": "avatar-elements",
+  "version": "0.0.0",
+  "description": "Avatars made easy",
+  "license": "MIT",
+  "main": "src/avatar-github.html",
+  "keywords": [
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.5.1",
+    "JavaScript-MD5": "~1.1.0"
+  }
 }

@@ -6,6 +6,7 @@
 
     <!-- Importing Custom Elements' Polyfill -->
     <script src="bower_components/webcomponentsjs/CustomElements.min.js"></script>
+    <script src="bower_components/JavaScript-MD5/js/md5.min.js"></script>
 
     <!-- Importing Custom Elements -->
     <script src="dist/avatars.js"></script>
@@ -18,6 +19,10 @@
 
     <img is="avatar-facebook" username="zenorocha" size="96">
     <pre><code>&lt;img is="avatar-facebook" username="zenorocha" size="96"&gt;</code></pre>
+
+    <img is="avatar-gravatar" email="joridoss@gmail.com" email-hash="36989e9d937e4a1a85340a9efde6e17c" size="96">
+    <pre><code>&lt;img is="avatar-gravatar" email="joridoss@gmail.com" size="96"&gt;</code></pre>
+    <pre><code>&lt;img is="avatar-gravatar" email-hash="36989e9d937e4a1a85340a9efde6e17c" size="96"&gt;</code></pre>
 
 </body>
 </html>

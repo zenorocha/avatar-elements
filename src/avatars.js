@@ -11,6 +11,14 @@ class Avatar extends HTMLImageElement {
         return usernameAttr;
     }
 
+    email() {
+        return this.getAttribute('email');
+    }
+
+    emailHash() {
+        return this.getAttribute('email-hash');
+    }
+
     size() {
         return this.getAttribute('size') || 48;
     }
@@ -58,6 +66,23 @@ class FacebookAvatar extends Avatar {
     }
 }
 
+class GravatarAvatar extends Avatar {
+    imageURL() {
+        var url = '';
+        if (this.emailHash()) {
+            url = `http://www.gravatar.com/avatar/${this.emailHash()}?s=${this.size()}`;
+        }else {
+            var email = md5(this.email());
+            url = `http://www.gravatar.com/avatar/${email}?s=${this.size()}`;
+        }
+        return url;
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -65,5 +90,11 @@ document.registerElement('avatar-github', {
 
 document.registerElement('avatar-facebook', {
     prototype: FacebookAvatar.prototype,
+    extends: 'img'
+});
+
+
+document.registerElement('avatar-gravatar', {
+    prototype: GravatarAvatar.prototype,
     extends: 'img'
 });
