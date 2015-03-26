@@ -38,7 +38,7 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/avatar-elements/src/avatar-github.html">
+    <script src="src/avatars.js"></script>
     ```
 
 3. Start using it!

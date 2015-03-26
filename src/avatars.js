@@ -1,5 +1,21 @@
-<script>
 (function() {
+    'use strict';
+
+    function loadJSON(path, callback) {
+    	var httpRequest = new XMLHttpRequest();
+    	httpRequest.onreadystatechange = function() {
+    		if (httpRequest.readyState === 4) {
+    			if (httpRequest.status === 200) {
+    				var data = JSON.parse(httpRequest.responseText);
+    				if (callback) callback(data);
+    			}
+    		}
+    	};
+    	httpRequest.open('GET', path, true);
+    	httpRequest.send();
+    }
+
+
     var element = Object.create(HTMLImageElement.prototype);
 
     element.createdCallback = function() {
@@ -24,18 +40,3 @@
         extends: 'img'
     });
 }());
-
-function loadJSON(path, callback) {
-	var httpRequest = new XMLHttpRequest();
-	httpRequest.onreadystatechange = function() {
-		if (httpRequest.readyState === 4) {
-			if (httpRequest.status === 200) {
-				var data = JSON.parse(httpRequest.responseText);
-				if (callback) callback(data);
-			}
-		}
-	};
-	httpRequest.open('GET', path, true);
-	httpRequest.send();
-}
-</script>
