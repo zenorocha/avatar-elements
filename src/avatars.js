@@ -11,6 +11,14 @@ class Avatar extends HTMLImageElement {
         return usernameAttr;
     }
 
+    email() {
+        return this.getAttribute('email');
+    }
+
+    emailHash() {
+        return this.getAttribute('email-hash');
+    }
+
     size() {
         return this.getAttribute('size') || 48;
     }
@@ -60,8 +68,17 @@ class FacebookAvatar extends Avatar {
 
 class GravatarAvatar extends Avatar {
     imageURL() {
-        var username = md5(this.username());
-        return 'http://www.gravatar.com/avatar/' + username+ '?s=' + this.size();
+        var url = '';
+        console.log(this.emailHash());
+
+        if (this.emailHash()) {
+            url = 'http://www.gravatar.com/avatar/' + this.emailHash()+ '?s=' + this.size();
+        }else {
+            var email = md5(this.email());
+            url = 'http://www.gravatar.com/avatar/' + email+ '?s=' + this.size();
+        }
+
+        return url;
     }
 
     createdCallback() {
