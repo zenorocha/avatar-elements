@@ -58,6 +58,17 @@ class FacebookAvatar extends Avatar {
     }
 }
 
+class GravatarAvatar extends Avatar {
+    imageURL() {
+        var username = md5(this.username());
+        return 'http://www.gravatar.com/avatar/' + username+ '?s=' + this.size();
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -65,5 +76,11 @@ document.registerElement('avatar-github', {
 
 document.registerElement('avatar-facebook', {
     prototype: FacebookAvatar.prototype,
+    extends: 'img'
+});
+
+
+document.registerElement('avatar-gravatar', {
+    prototype: GravatarAvatar.prototype,
     extends: 'img'
 });
