@@ -29,13 +29,13 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
 
 ## Usage
 
-1. Import Web Components' polyfill:
+1. Import Custom Elements' polyfill:
 
     ```html
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="bower_components/webcomponentsjs/CustomElements.min.js"></script>
     ```
 
-2. Import Custom Element:
+2. Import Custom Elements:
 
     ```html
     <script src="dist/avatars.js"></script>
