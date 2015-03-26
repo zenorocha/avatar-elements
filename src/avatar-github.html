@@ -3,12 +3,14 @@
     var element = Object.create(HTMLImageElement.prototype);
 
     element.createdCallback = function() {
-        var self = this;
-        var username = this.getAttribute('username');
-        var url = 'https://api.github.com/users/' + username;
+        var self = this,
+            size = this.getAttribute('size') || 48,
+            username = this.getAttribute('username'),
+            url = 'https://api.github.com/users/' + username;
 
         loadJSON(url, function(data) {
-            self.setAttribute('src', data.avatar_url);
+            var image = data.avatar_url + '&s=' + size;
+            self.setAttribute('src', image);
 		});
     };
 

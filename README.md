@@ -6,6 +6,15 @@
 
 [Check it live!](http://zenorocha.github.io/avatar-elements)
 
+## Roadmap
+
+- [X] GitHub
+- [ ] Twitter
+- [ ] Facebook
+- [ ] Google+
+- [ ] Skype
+- [ ] Gravatar
+
 ## Install
 
 Install the component using [Bower](http://bower.io/):
@@ -36,14 +45,14 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
     <img is="avatar-github" username="zenorocha">
     ```
 
-## Roadmap
+## &lt;avatar-github&gt;
 
-- [X] GitHub
-- [ ] Twitter
-- [ ] Facebook
-- [ ] Google+
-- [ ] Skype
-- [ ] Gravatar
+### Options
+
+Attribute     | Options     | Default      | Description
+---           | ---         | ---          | ---
+`username`    | *string*    | `null`       | The name of the user
+`size`        | *number*    | `48`         | Custom image dimensions
 
 ## Development
 
