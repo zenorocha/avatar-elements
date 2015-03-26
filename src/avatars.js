@@ -60,8 +60,7 @@ class FacebookAvatar extends Avatar {
 
 class SkypeAvatar extends Avatar {
     imageURL() {
-        //http://api.skype.com/users/live:jonatan_29/profile/avatar
-        return 'http://api.skype.com/users/' + this.username() + '/profile/avatar';
+        return `http://api.skype.com/users/$(this.username())/profile/avatar`;
     }
 
     createdCallback() {
