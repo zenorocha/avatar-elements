@@ -33,26 +33,17 @@ Or [download as ZIP](https://github.com/zenorocha/avatar-elements/archive/master
 3. Start using it!
 
     ```html
-    <avatar-github></avatar-github>
+    <img is="avatar-github" username="zenorocha">
     ```
 
-## Options
+## Roadmap
 
-Attribute     | Options     | Default      | Description
----           | ---         | ---          | ---
-`foo`         | *string*    | `bar`        | Lorem ipsum dolor.
-
-## Methods
-
-Method        | Parameters   | Returns     | Description
----           | ---          | ---         | ---
-`unicorn()`   | None.        | Nothing.    | Magic stuff appears.
-
-## Events
-
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
+- [X] GitHub
+- [ ] Twitter
+- [ ] Facebook
+- [ ] Google+
+- [ ] Skype
+- [ ] Gravatar
 
 ## Development
 
