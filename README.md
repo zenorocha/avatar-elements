@@ -7,10 +7,11 @@
 This project is under construction, but you can check our high level goals.
 
 - [X] GitHub
-- [ ] Twitter
-- [ ] Facebook
+- [X] Facebook
+- [X] Skype
+- [X] Twitter
+- [X] Instagram
 - [ ] Google+
-- [ ] Skype
 - [ ] Gravatar
 
 ## Demo
