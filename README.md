@@ -9,7 +9,7 @@ This project is under construction, but you can check our high level goals.
 - [X] GitHub
 - [X] Facebook
 - [X] Skype
-- [ ] Twitter
+- [X] Twitter
 - [ ] Google+
 - [ ] Gravatar
 
