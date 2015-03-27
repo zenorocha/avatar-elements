@@ -78,6 +78,16 @@ class TwitterAvatar extends Avatar {
     }
 }
 
+class InstagramAvatar extends Avatar {
+    imageURL() {
+        return `http://avatars.io/instagram/${this.username()}`;
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -95,5 +105,10 @@ document.registerElement('avatar-skype', {
 
 document.registerElement('avatar-twitter', {
     prototype: TwitterAvatar.prototype,
+    extends: 'img'
+});
+
+document.registerElement('avatar-instagram', {
+    prototype: InstagramAvatar.prototype,
     extends: 'img'
 });

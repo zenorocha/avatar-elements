@@ -10,6 +10,7 @@ This project is under construction, but you can check our high level goals.
 - [X] Facebook
 - [X] Skype
 - [X] Twitter
+- [X] Instagram
 - [ ] Google+
 - [ ] Gravatar
 
