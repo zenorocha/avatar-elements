@@ -90,17 +90,19 @@ class InstagramAvatar extends Avatar {
 
 class GravatarAvatar extends Avatar {
     email() {
-        var emailAttr = this.getAttribute('email');
+        return this.getAttribute('email');
+    }
 
-        if (!emailAttr) {
-            throw new Error('Email attribute is required.');
-        }
-
-        return emailAttr;
+    emailHash() {
+        return this.getAttribute('email-hash');
     }
 
     imageURL() {
-        return `http://avatars.io/email/${this.email()}`;
+        if (this.emailHash()) {
+            return `http://www.gravatar.com/avatar/${this.emailHash()}`;
+        } else {
+            return `http://avatars.io/email/${this.email()}`;
+        }
     }
 
     createdCallback() {
