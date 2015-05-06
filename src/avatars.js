@@ -88,6 +88,28 @@ class InstagramAvatar extends Avatar {
     }
 }
 
+class GravatarAvatar extends Avatar {
+    email() {
+        return this.getAttribute('email');
+    }
+
+    emailHash() {
+        return this.getAttribute('email-hash');
+    }
+
+    imageURL() {
+        if (this.emailHash()) {
+            return `http://www.gravatar.com/avatar/${this.emailHash()}`;
+        } else {
+            return `http://avatars.io/email/${this.email()}`;
+        }
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -110,5 +132,10 @@ document.registerElement('avatar-twitter', {
 
 document.registerElement('avatar-instagram', {
     prototype: InstagramAvatar.prototype,
+    extends: 'img'
+});
+
+document.registerElement('avatar-gravatar', {
+    prototype: GravatarAvatar.prototype,
     extends: 'img'
 });
