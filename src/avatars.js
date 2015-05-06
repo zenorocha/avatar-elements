@@ -88,6 +88,26 @@ class InstagramAvatar extends Avatar {
     }
 }
 
+class GravatarAvatar extends Avatar {
+    email() {
+        var emailAttr = this.getAttribute('email');
+
+        if (!emailAttr) {
+            throw new Error('Email attribute is required.');
+        }
+
+        return emailAttr;
+    }
+
+    imageURL() {
+        return `http://avatars.io/email/${this.email()}`;
+    }
+
+    createdCallback() {
+        this.setAttribute('src', this.imageURL());
+    }
+}
+
 document.registerElement('avatar-github', {
     prototype: GitHubAvatar.prototype,
     extends: 'img'
@@ -110,5 +130,10 @@ document.registerElement('avatar-twitter', {
 
 document.registerElement('avatar-instagram', {
     prototype: InstagramAvatar.prototype,
+    extends: 'img'
+});
+
+document.registerElement('avatar-gravatar', {
+    prototype: GravatarAvatar.prototype,
     extends: 'img'
 });

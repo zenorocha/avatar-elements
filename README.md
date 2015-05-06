@@ -12,7 +12,7 @@ This project is under construction, but you can check our high level goals.
 - [X] Twitter
 - [X] Instagram
 - [ ] Google+
-- [ ] Gravatar
+- [X] Gravatar
 
 ## Demo
 
