@@ -11,7 +11,6 @@ This project is under construction, but you can check our high level goals.
 - [X] Skype
 - [X] Twitter
 - [X] Instagram
-- [ ] Google+
 - [ ] Gravatar
 
 ## Demo
