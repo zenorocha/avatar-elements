@@ -101,7 +101,7 @@ class GravatarAvatar extends Avatar {
         if (this.emailHash()) {
             return `http://www.gravatar.com/avatar/${this.emailHash()}`;
         } else {
-            return `http://avatars.io/email/${this.email()}`;
+            return `http://avatars.io/gravatar/${this.email()}`;
         }
     }
 
